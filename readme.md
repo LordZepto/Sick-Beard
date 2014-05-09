@@ -54,3 +54,17 @@ If you find a bug please report it or it'll never get fixed. Verify that it hasn
 [googleissues]: http://code.google.com/p/sickbeard/issues/list
 [googlenewissue]: http://code.google.com/p/sickbeard/issues/entry
 [jsonrpclib]: https://github.com/joshmarshall/jsonrpclib
+
+## This fork
+
+This fork started with the intention of keeping mr-orange's fork _mostly_ alive.
+Right now is a fork from the original _development_ branch on 10/05/2014 commit e76b3008251195ed529457f241d1e8803d9668d8
+The things I need for myself are:
+- ~~Thepiratebay~~
+- PublicHD
+- Subliminal
+    - subtitulos.es
+    - argenteam
+    - subdivx
+
+The subliminal providers probably will be a fork of that, and then use that fork with this sickbeard.
