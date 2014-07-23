@@ -67,15 +67,15 @@ class LibnotifyNotifier:
         try:
             import pynotify
         except ImportError:
-            logger.log(u"LIBNOTIFY: Unable to import pynotify. libnotify notifications won't work.")
+            logger.log(u"LIBNOTIFY: Unable to import pynotify. libnotify notifications won't work.", logger.ERROR)
             return False
         try:
             import gobject
         except ImportError:
-            logger.log(u"LIBNOTIFY: Unable to import gobject. We can't catch a GError in display.")
+            logger.log(u"LIBNOTIFY: Unable to import gobject. We can't catch a GError in display.", logger.ERROR)
             return False
         if not pynotify.init('Sick Beard'):
-            logger.log(u"LIBNOTIFY: Initialization of pynotify failed. libnotify notifications won't work.")
+            logger.log(u"LIBNOTIFY: Initialization of pynotify failed. libnotify notifications won't work.", logger.ERROR)
             return False
         self.pynotify = pynotify
         self.gobject = gobject
@@ -117,9 +117,9 @@ class LibnotifyNotifier:
             self._notify(common.notifyStrings[common.NOTIFY_DOWNLOAD], ep_name)
 
     def test_notify(self):
-        return self._notify("Test notification", "This is a test notification from Sick Beard", force=True)
+        return self._notify("Test", "This is a test notification from Sick Beard", force=True)
 
-    def update_library(self, showName=None):
+    def update_library(self, ep_obj=None):
         pass
 
 notifier = LibnotifyNotifier
